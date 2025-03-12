@@ -8,6 +8,11 @@ pub enum Error {
     Mikrotik(mikrotik_rs::error::DeviceError),
     #[from]
     Io(std::io::Error),
+    FatalResponse {message: String},
+    TrapResponse {message: String},
+    NoReplyResponse,
+    NoReply,
+    CommandCompletionFail,
 }
 
 // region:    --- Error Boilerplate

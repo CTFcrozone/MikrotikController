@@ -8,6 +8,9 @@ pub enum Error {
     Mikrotik(mikrotik_rs::error::DeviceError),
 
     #[from]
+    MikrotikController(crate::mcontroller::Error),
+
+    #[from]
     Clap(clap::error::Error),
 
     #[from]
